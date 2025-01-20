@@ -127,7 +127,7 @@
 				{#each languages as lang, i}
 					<Carousel.Item>
 						<div class="p-5">
-							<Card.Root class="bg-white/[0.7] border-none">
+							<Card.Root class="bg-white/[0.2] border-none">
 								<Card.Content class="flex aspect-square items-center justify-center">
 									<img src="/logos/{lang.logo}" alt={lang.name} class="w-36 h-36" />
 								</Card.Content>
