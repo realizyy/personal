@@ -11,8 +11,8 @@ node_modules
 /build
 
 #Private Source
-/src/lib/routes/api/webhooks
-
+/src/routes/api/webhook
+/src/routes/api/webhook/+server.ts
 
 # OS
 .DS_Store
