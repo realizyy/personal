@@ -10,6 +10,9 @@ node_modules
 /.svelte-kit
 /build
 
+#Private Source
+/src/lib/routes/api/webhooks
+
 
 # OS
 .DS_Store

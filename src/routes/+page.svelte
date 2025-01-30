@@ -4,6 +4,7 @@
 	import * as Carousel from "$lib/components/ui/carousel/index.js";
 	const plugin = Autoplay({ delay: 2000, stopOnInteraction: false });
 	import { Button } from "$lib/components/ui/button";
+	import { onMount } from 'svelte';
 
 	const languages = [
 		{ name: "JavaScript", logo: "js.png" },
@@ -85,6 +86,15 @@
 			aspectRatio: "aspect-square"
 		}
 	];
+
+	onMount(() => {
+		fetch('/api/webhook', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+		});
+	});
 </script>
 
 <div class="min-h-screen bg-black text-white font-mono">
@@ -124,7 +134,7 @@
 		<!-- Carousel icon programming language -->
 		<Carousel.Root class="w-full max-w-xs m-5" plugins={[plugin]}>
 			<Carousel.Content>
-				{#each languages as lang, i}
+				{#each languages as lang}
 					<Carousel.Item>
 						<div class="p-5">
 							<Card.Root class="bg-white/[0.2] border-none">
@@ -136,8 +146,6 @@
 					</Carousel.Item>
 				{/each}
 			</Carousel.Content>
-			<Carousel.Previous />
-			<Carousel.Next />
 		</Carousel.Root>
 	</div>
 	<main class="grid grid-cols-1 md:grid-cols-3 gap-0">
